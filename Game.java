@@ -14,7 +14,7 @@ public class Game {
 	private static Consumer<String> output = System.out::println;
 	private static Room Location = World.buildWorld(); //Players Location
 	public static HashMap<String, String> rooms = new HashMap<>();
-	private static ArrayList<Item> Storage = new ArrayList<>();
+	protected static ArrayList<Item> Storage = new ArrayList<>();
 	public static void takeItem(String name) {
 		if(Location.getItem(name).getItem() == null) {
 			Game.print("There is nothing to take fatty");
@@ -304,7 +304,42 @@ public class Game {
 					//current_Item.use();
 					Game.print("Use what?");
 				break;
-
+			case "OPEN":
+				Item current_item = null;
+				if(parts.length == 2) {
+				 current_item = Location.getItem(parts[1]);
+				current_item.open();
+				}else {
+					Game.print("Open what");
+				}
+				break;
+			case "CLOSE":
+				 current_item = null;
+				if(parts.length == 2) {
+					 current_item = Location.getItem(parts[1]);
+					current_item.close();
+					}else {
+						Game.print("Close what");
+					}
+					break;
+			case "READ":
+				 haveItem = false;
+				 current_Item = null;
+				if(parts.length == 2) {
+						for(Item item: Storage) {
+							if (item.getItem().equals(parts[1])) {
+								haveItem = true;
+								current_Item = item;
+							}
+						}
+						if(haveItem) {
+							current_Item.read();
+						}
+					
+				}else
+					//current_Item.use();
+					Game.print("read what?");
+				break;
 	            ///
 	        case "EXIT":
 	        case "QUIT":
@@ -352,6 +387,8 @@ public class Game {
 	public static Room getCurrentRoom() {
 		return Location;
 	}
-
+	public void addInventoryItem(Item i) {
+		Storage.add(i);
+	}
 
 }

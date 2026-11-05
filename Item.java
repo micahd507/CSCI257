@@ -27,7 +27,15 @@ public class Item implements Serializable {
 	}
 	public void use() {
 		Game.print("You really thought that would work?"
-				+ "Genually a skill issue");
-		
+				+ "Genually a skill issue"); //Runs if item not usable, like da orb.
+	}
+	public void open() {
+		Game.print("There is nothing to open here my buddy ole pal ole tool.");
+	}
+	public void close() {
+		Game.print("There is nothing to close");
+	}
+	public void read() {
+		Game.print("There is nothing to read here.Go read a book chud.");
 	}
 }

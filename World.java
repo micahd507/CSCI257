@@ -49,6 +49,10 @@ public class World {
 		Item knife = new Item("knife");
 		kitchen.setItem("knife",knife);
 		
+		Item safe = new safe();
+		attic.setItem("safe",safe);
+		safe.setweight(true);
+		
 		Item mysteriousorb = new Item("mysteriousorb");
 		kitchen.setItem("mysterious orb" , mysteriousorb);
 		//Open or closed

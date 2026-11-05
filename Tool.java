@@ -17,6 +17,8 @@ public class Tool extends Item{
 				Game.print("Using the tool, you are able to…open dat shit");
 			}
 		} else
-			Game.print("You don't see any way to use the tool…");
+			Game.print("You don't see any way to use the tool…so why did you even pull it out? Weak"
+					+ "ass pull out game. FUCK YOU");
+		
 	}
 }

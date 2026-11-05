@@ -3,7 +3,7 @@ package game;
 public class Officekey extends Item{
 	private boolean usedKey;
 	public Officekey() {
-		super("officekey");
+		super("officekey"); ///calls the super classes contructor (
 		usedKey = false;
 	}
 	@Override
@@ -18,6 +18,6 @@ public class Officekey extends Item{
 					+ "you can put a key in a hole");
 		}
 	} else
-		Game.print("You don't see any way to use the key…");
+		Game.print("You don't see any way to use the key…might as well drop that shit gangy. im wylin??");
 }
 }
